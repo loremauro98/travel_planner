@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IDEs & System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+!.env.example
+
+# Cross-agent junction (do not track link itself in git; .agents/skills is tracked)
+.claude/skills
+
+# Caches & Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
+graphify-out/
+current_output/
+.serena/
+
+# Data arrays, databases & models
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.npz
+*.npy
+*.parquet
+*.h5
+*.pkl
+*.pickle

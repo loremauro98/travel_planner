@@ -1,0 +1,10 @@
+# Normalize text files; never diff binary assets as text.
+* text=auto
+
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
