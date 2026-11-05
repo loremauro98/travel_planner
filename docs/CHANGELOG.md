@@ -55,6 +55,8 @@
 - Live Alsace run: 280 retrieved, 204 after local filters, 40-row shortlist; all rows are entire
   places (`Entire home/apt`), no private rooms.
 - Top results matched the visible BrowserOS page (names and CHF totals).
+- **Checkpoint audit:** Documentation Synchronizer confirmed no structural drift; corrected the
+  sample run count in `docs/airbnb_search.md`; 42 skills registered and routed.
 - Outputs: `current_output/airbnb_alsace_new_year_2026-12-31_2027-01-02.csv` and `.md`.
 
 ---

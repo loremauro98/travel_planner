@@ -87,7 +87,8 @@ Price rules:
 
 - `pytest tests/test_airbnb_*.py` — unit tests with mocked API calls.
 - Compare the top five names and totals against the visible Airbnb page before trusting a run.
-- The sample run returned 280 listings, 221 after local filters, and a 40-row shortlist.
+- The sample run returned 280 listings, 204 after local filters, and a 40-row shortlist; all 40 rows
+  were entire places.
 
 ## BrowserOS fallback
 
