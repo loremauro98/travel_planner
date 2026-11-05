@@ -26,7 +26,7 @@ partial version of the architecture. What is still missing, and what has drifted
 - [x] Run the full test suite and record evidence.
 - [x] Generate `docs/structure.md` and update the changelog.
 - [x] Checkpoint: archive this task, stage explicitly, commit.
-- [ ] GitHub remote: no repo exists yet; needs user action or credentials.
+- [x] GitHub remote: created and pushed to `loremauro98/travel_planner`.
 
 ## Work log
 
@@ -57,8 +57,8 @@ partial version of the architecture. What is still missing, and what has drifted
 - `serena project create --language python --index`: indexed 15 Python files.
 - `git status`: audited before the initial commit; no `.env`, database, cache, or graph artifacts staged.
 
-## Open item
+## Resolution
 
-- The workspace had no `.git` directory and no `travel_planner` repository on GitHub. The repo is now
-  initialized locally on `main`. A remote must be created by the user (or with their credentials)
-  before `git push`.
+- The workspace had no `.git` directory and no `travel_planner` repository on GitHub. The repository
+  was initialized on `main` and pushed to `https://github.com/loremauro98/travel_planner` on
+  2026-11-05.

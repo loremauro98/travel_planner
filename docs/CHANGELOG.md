@@ -22,7 +22,8 @@
   catches plus logging.
 - **Maintenance:** Added `ops/sync_tree.py` (generates `docs/structure.md`) and
   `tests/test_icm_structure.py` (guards the layout and skill registry).
-- **Git:** Initialized the repository; no GitHub remote exists yet.
+- **Git:** Initialized the repository and pushed `main` to
+  `https://github.com/loremauro98/travel_planner`.
 
 ### Verification
 - `pytest -q`: **19 passed**.
