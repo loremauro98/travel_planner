@@ -12,14 +12,18 @@ travel_planner/
 ├── docs/
 │   ├── reference/
 │   │   └── icm_course_notes.md
+│   ├── airbnb_search.md
 │   ├── CHANGELOG.md
 │   ├── CONTEXT.md
 │   ├── CUSTOM_SKILLS.md
 │   └── structure.md
 ├── ops/
+│   ├── configs/
+│   │   └── airbnb_alsace.json
 │   ├── notebooks/
 │   │   └── explore_flights.ipynb
 │   ├── scripts/
+│   │   ├── airbnb_search.py
 │   │   ├── generate_graphify_chunk.py
 │   │   ├── merge_graph.py
 │   │   └── price_scraper.py
@@ -29,21 +33,31 @@ travel_planner/
 │   ├── decisions/
 │   │   └── 2026-11-05-adopt-icm.md
 │   ├── specs/
+│   │   ├── airbnb_search_spec.md
 │   │   └── flight_tracker_spec.md
 │   ├── tasks/
 │   │   └── archive/
+│   │       ├── task_airbnb_search.md
 │   │       └── task_icm_alignment.md
 │   └── CONTEXT.md
 ├── src/
 │   ├── database/
 │   │   └── db_manager.py
 │   ├── services/
+│   │   ├── airbnb_analysis.py
+│   │   ├── airbnb_api.py
+│   │   ├── airbnb_report.py
 │   │   ├── analytics.py
 │   │   ├── flight_api.py
 │   │   └── routing.py
 │   └── CONTEXT.md
 ├── tests/
+│   ├── airbnb_fixtures.py
 │   ├── CONTEXT.md
+│   ├── test_airbnb_analysis.py
+│   ├── test_airbnb_api.py
+│   ├── test_airbnb_cli.py
+│   ├── test_airbnb_report.py
 │   ├── test_analytics.py
 │   ├── test_db_manager.py
 │   ├── test_flight_api.py
@@ -51,6 +65,7 @@ travel_planner/
 │   ├── test_routing.py
 │   └── test_scraper.py
 ├── .env.example
+├── .gitattributes
 ├── .gitignore
 ├── .graphifyignore
 ├── AGENTS.md

@@ -44,6 +44,7 @@ anyway.
 | **[CORE LOGIC & ENGINES] Pure algorithmic implementation** — routing, analytics, moving averages, dip detection, database access | `/src` | [src/CONTEXT.md](src/CONTEXT.md) | `test-driven-development`, `statistical-batch-orchestrator`, `transparent-data-masker` |
 | **[INGESTION & RUNNERS] Scraping, pipeline execution & batch reporting** — price ingestion, rate-limited runners, notebooks, maintenance scripts | `/ops` | [ops/CONTEXT.md](ops/CONTEXT.md) | `statistical-batch-orchestrator`, `transparent-data-masker`, `datavis` |
 | **[DATA GOVERNANCE] Raw fares & price history** — append-only SQLite recordings and stable exports | `/data` | [data/CONTEXT.md](data/CONTEXT.md) | `transparent-data-masker` |
+| **[TRAVEL DATA SOURCES] Airbnb search & shortlist** — authenticated search URL, local filters, CSV + Markdown shortlist | `/ops` + `/src` | [ops/CONTEXT.md](ops/CONTEXT.md) | `airbnb-search`, `transparent-data-masker`, `verification-before-completion` |
 | **[PLANNING & SPECS] Feature specifications & task tracking** — formal specs, ADRs, task logs | `/planning` | [planning/CONTEXT.md](planning/CONTEXT.md) | `writing-plans`, `strict-agent-pipeline` |
 | **[TESTING] Headless verification** — unit and integration tests for `/src` and `/ops` | `/tests` | [tests/CONTEXT.md](tests/CONTEXT.md) | `test-driven-development`, `verification-before-completion` |
 | **[MAINTENANCE, DISTILLATION & CHECKPOINT] Codebase maintenance, skill distillation & phase wrap-up** — formatting, tree sync, graph update, test verification, session distillation | Root / `/ops` | [docs/CHANGELOG.md](docs/CHANGELOG.md) | `icm-maintenance`, `project-checkpoint`, `verification-before-completion`, `lookback` |
@@ -160,6 +161,10 @@ another round trip, so spend a few and make each one count.
 - **pytest** — `C:\Users\lorem\miniconda3\envs\travel\python.exe -m pytest -q` from the repo root.
 - **ruff** — `uvx ruff format .` and `uvx ruff check . --fix` (ruff is not installed in the `travel`
   env by default; `uvx` is available).
+- **Airbnb search** — `pyairbnb==2.2.2` (validated). Run
+  `C:\Users\lorem\miniconda3\envs\travel\python.exe ops\scripts\airbnb_search.py --config ops\configs\airbnb_alsace.json`.
+  Outputs go to `current_output/` (gitignored). One search at a time; use BrowserOS as the
+  verification and fallback layer.
 
 ---
 

@@ -9,7 +9,7 @@ This repo uses the **Interpretable Context Methodology (ICM)**.
 
 - **Layer 1 map:** [`AGENTS.md`](AGENTS.md) — root routing, NEVER rules, and defaults.
 - **Layer 2 contracts:** `CONTEXT.md` in every workspace — what belongs there and what does not.
-- **Layer 3 skills:** `.agents/skills/` — 41 reusable skills, routed by intent in
+- **Layer 3 skills:** `.agents/skills/` — 42 reusable skills, routed by intent in
   [`skills-route`](.agents/skills/skills-route/SKILL.md).
 - **Engineering pipeline:** [`CODE_PIPELINE.md`](CODE_PIPELINE.md) — the mandatory 9-step workflow.
 - **Skill registry:** [`docs/CUSTOM_SKILLS.md`](docs/CUSTOM_SKILLS.md).
@@ -49,6 +49,20 @@ Copy-Item .env.example .env
 # Run the full test suite
 & $py -m pytest -q
 ```
+
+## Airbnb shortlist
+
+Set the filters in Airbnb, copy the cleaned search URL into `ops/configs/airbnb_alsace.json`, then
+run:
+
+```powershell
+& $py ops\scripts\airbnb_search.py --config ops\configs\airbnb_alsace.json
+```
+
+The command writes a CSV and a Markdown shortlist to `current_output/` (gitignored). It uses
+`pyairbnb==2.2.2` for the search and enriches only the top N listings. Keep runs low-volume and verify
+prices on Airbnb before booking. See [`docs/airbnb_search.md`](docs/airbnb_search.md) for the config
+schema and the BrowserOS fallback.
 
 ## Data
 

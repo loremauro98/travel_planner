@@ -36,6 +36,7 @@ references, user guides, and reference notes. This is the human-readable memory 
 - `CHANGELOG.md` — permanent audit log, newest first.
 - `structure.md` — generated directory map.
 - `reference/` — course notes, literature, and background material.
+- `airbnb_search.md` — Airbnb shortlist config, CLI, output, and fallback guide.
 - `[doc_name].md` — API references and user guides.
 
 ---

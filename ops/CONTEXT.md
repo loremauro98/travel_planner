@@ -17,6 +17,7 @@ scripts. Code here wires the `/src` engines together; it does not own the math.
 - Runtime configuration from `.env` (`SERPAPI_KEY`).
 - CLI arguments and filter parameters: `dip_threshold`, `ma_window`, `max_stops`,
   `max_travel_time`.
+- Airbnb search configs in `configs/` and the cleaned search URL they contain.
 
 ---
 
@@ -35,6 +36,8 @@ scripts. Code here wires the `/src` engines together; it does not own the math.
 ## 4. Expected Outputs
 
 - `scripts/price_scraper.py` — the main ingestion and alert runner.
+- `scripts/airbnb_search.py` — Airbnb search to CSV + Markdown shortlist.
+- `configs/airbnb_alsace.json` — validated Airbnb search config.
 - `scripts/generate_graphify_chunk.py` — manual semantic chunk builder for the knowledge graph.
 - `scripts/merge_graph.py` — manual incremental graph merge helper.
 - `notebooks/explore_flights.ipynb` — interactive exploration and plotting.
@@ -51,6 +54,9 @@ scripts. Code here wires the `/src` engines together; it does not own the math.
 - **Never drop flights silently.** Every filter must log the count it removed per criterion.
 - **Never call a live API in a test.** Mock the boundary.
 - **Never write task notes or scratch outputs to the repo root.**
+- **Never run the Airbnb search in a loop.** One search at a time, low volume; use BrowserOS as the
+  verification and fallback layer.
+- **Never commit `current_output/`.** Shortlists are local, one-off artifacts.
 
 ---
 

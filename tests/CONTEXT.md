@@ -36,13 +36,18 @@ routing engine, analytics engine, database layer, and ingestion pipeline behave 
 - `test_scraper.py` — ingestion pipeline with a mocked API boundary.
 - `test_flight_api.py` — SerpApi request construction, including round-trip vs one-way.
 - `test_db_manager.py` — schema, insert, and historical query behavior.
+- `test_airbnb_analysis.py` — URL parsing, price/layout normalization, filters, sorting.
+- `test_airbnb_api.py` — pyairbnb boundary with mocked search/detail calls.
+- `test_airbnb_report.py` — CSV and Markdown output.
+- `test_airbnb_cli.py` — config loading, output paths, enrichment, and the filter-then-cap flow.
 - `test_icm_structure.py` — guardrail for the ICM layout and skill registry.
 
 ---
 
 ## 5. Local Invariants & NEVER Rules
 
-- **Never call a live API.** Mock `fetch_flights` and any other network boundary.
+- **Never call a live API.** Mock `fetch_flights`, `pyairbnb.search_all_from_url`, and
+  `pyairbnb.get_details`.
 - **Never touch `data/flight_data.db`.** Use `tmp_path` or a monkeypatched `DB_PATH`.
 - **Never hardcode credentials or environment-specific paths** in a test.
 - **Never weaken a test to make it pass.** Fix the code or the test's premise.

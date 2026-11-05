@@ -4,3 +4,7 @@ pytest==8.2.2
 requests
 python-dotenv
 ruff
+
+# Airbnb search (validated 2026-11-05)
+pyairbnb==2.2.2
+curl_cffi==0.17.0

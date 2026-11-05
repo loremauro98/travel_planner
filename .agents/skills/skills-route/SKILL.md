@@ -25,7 +25,7 @@ flowchart TD
     IntentRouter -->|"3. Ingest / Filter Data"| C3["transparent-data-masker"]
     IntentRouter -->|"4. Pricing / Time-Series Stats"| C4["statistical-batch-orchestrator"]
     IntentRouter -->|"5. Plot / Present / Review"| C5["datavis / master-presenter / flavio"]
-    IntentRouter -->|"6. APIs / Research / Architecture"| C6["experts_council / prompter / graphify"]
+    IntentRouter -->|"6. APIs / Research / Architecture"| C6["experts_council / prompter / graphify / airbnb-search"]
     IntentRouter -->|"7. Wrap Up / Save Milestone"| C7["project-checkpoint → icm-maintenance"]
 ```
 
@@ -99,6 +99,7 @@ flowchart TD
     [`graphify-agentic-extraction`](../graphify-agentic-extraction/SKILL.md)
   - General problem-solving loop: [`fable-method`](../fable-method/SKILL.md),
     [`fable-loop`](../fable-loop/SKILL.md), [`fable-judge`](../fable-judge/SKILL.md)
+  - Airbnb shortlist extraction: [`airbnb-search`](../airbnb-search/SKILL.md)
 - **Hard Rule:** Cite the source for every external claim. Never invent an API parameter, response
   field, or fare rule. Verify against the provider's documentation before writing the adapter.
 
@@ -220,6 +221,7 @@ Every installed skill is assigned to at least one category. No orphan skills.
 | `prompter` | 6 | Structured research prompt for external experts |
 | `graphify` | 6 | Query the knowledge graph |
 | `graphify-agentic-extraction` | 6 | Background semantic graph extraction |
+| `airbnb-search` | 3, 6 | Airbnb search URL → filtered CSV + Markdown shortlist |
 
 ---
 
@@ -232,6 +234,7 @@ Every installed skill is assigned to at least one category. No orphan skills.
 | Change scraper filters or rate limiting | 1 + 3 | `test-driven-development`, `transparent-data-masker` |
 | Change the SQLite schema or path | 1 + 3 | `test-driven-development`, `transparent-data-masker`, `db_manager` authority |
 | Explore prices in the notebook | 5 | `datavis` |
+| Search Airbnb and build a shortlist | 3 + 6 | `airbnb-search`, `transparent-data-masker`, `verification-before-completion` |
 | Write or update a spec | 1 | `writing-plans`, `strict-agent-pipeline` |
 | Wrap up a phase | 7 | `verification-before-completion`, `project-checkpoint`, `icm-maintenance` |
 

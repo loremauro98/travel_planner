@@ -31,6 +31,29 @@
 - `graphify update .`: rebuilt the code graph (1327 nodes, 1335 edges).
 - `serena project index`: indexed 15 Python files.
 
+## [Automated Airbnb Search & Shortlist]
+
+### Tasks
+- **Spike:** Validated `pyairbnb==2.2.2` against the Alsace search URL: 280 listings in ~7s, CHF.
+- **Source of truth:** Cleaned the URL (stripped tracking/date-picker state); the cleaned URL
+  reproduced the visible page’s top listings, while the full URL returned a different set.
+- **Pipeline:** Added `src/services/airbnb_api.py` (pyairbnb boundary), `airbnb_analysis.py`
+  (price/layout normalization, dedupe, per-criterion filters, sorting), and `airbnb_report.py`
+  (CSV + Markdown).
+- **CLI:** Added `ops/scripts/airbnb_search.py` and `ops/configs/airbnb_alsace.json`; outputs go to
+  `current_output/` (gitignored).
+- **Skill:** Added `.agents/skills/airbnb-search/SKILL.md`, registered it in
+  `docs/CUSTOM_SKILLS.md`, and routed it under `skills-route` Category 6.
+- **Docs:** Added `docs/airbnb_search.md` and the Airbnb routing row in `AGENTS.md`.
+- **Dependencies:** Added `pyairbnb==2.2.2` and `curl_cffi==0.17.0` to `requirements.txt`.
+
+### Verification
+- `pytest -q`: **37 passed**.
+- `ruff check src ops tests`: **clean**.
+- Live Alsace run: 280 retrieved, 205 after local filters, 40-row shortlist.
+- Top results matched the visible BrowserOS page (names and CHF totals).
+- Outputs: `current_output/airbnb_alsace_new_year_2026-12-31_2027-01-02.csv` and `.md`.
+
 ---
 
 # 2026-07-03

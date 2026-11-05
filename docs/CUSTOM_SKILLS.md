@@ -25,10 +25,10 @@ Recreate the junction after a fresh clone:
 [Intent: <Category 1-7> | Skill Stack: <skills> | Env: travel]
 ```
 
-The installed profile is the **ICM core profile: 41 skills**. Science-only extensions
-(`literature-search`, `literature-to-algorithm`, `scientific-bullshit-detector`, `peri-event-tuning`)
-are not installed; Category 6 routes API/domain research through `experts_council`, `prompter`, and
-`graphify` instead.
+The installed profile is **42 skills: the 41-skill ICM core profile plus the repo-specific
+`airbnb-search` skill**. Science-only extensions (`literature-search`, `literature-to-algorithm`,
+`scientific-bullshit-detector`, `peri-event-tuning`) are not installed; Category 6 routes API/domain
+research through `experts_council`, `prompter`, and `graphify` instead.
 
 ---
 
@@ -94,6 +94,12 @@ are not installed; Category 6 routes API/domain research through `experts_counci
 | `prompter` | 6 | Build a structured research prompt from local context. |
 | `graphify` | 6 | Query the structural knowledge graph before reading raw files. |
 | `graphify-agentic-extraction` | 6 | Background semantic extraction to bypass API rate limits. |
+
+### Travel data sources
+
+| Skill | Categories | Purpose |
+|---|---|---|
+| `airbnb-search` | 3, 6 | Turn an Airbnb search URL into a filtered CSV + Markdown shortlist; enrich top picks; BrowserOS fallback. |
 
 ---
 

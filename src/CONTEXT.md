@@ -37,7 +37,10 @@ stateless where possible and deterministic given its inputs.
 
 - `services/routing.py` — regional airport expansion and route generation.
 - `services/analytics.py` — moving averages and price-dip detection.
-- `services/flight_api.py` — the only network boundary; SerpApi fetch and parse.
+- `services/flight_api.py` — the SerpApi network boundary; fetch and parse.
+- `services/airbnb_api.py` — the Airbnb network boundary; pyairbnb search and detail calls.
+- `services/airbnb_analysis.py` — price/layout normalization, dedupe, local filters, sorting.
+- `services/airbnb_report.py` — CSV and Markdown shortlist output.
 - `database/db_manager.py` — schema, connection, insert, and historical query helpers.
 - `[snake_case.py]` -> `services/`, `database/`, or `utils/`.
 
@@ -50,7 +53,11 @@ stateless where possible and deterministic given its inputs.
 - **Never duplicate the region map.** `get_airports_for_region` in `routing.py` is the authority.
 - **Never duplicate the moving-average or dip formula.** `analytics.py` is the authority.
 - **Never open SQLite outside `db_manager.py`.** The database path and schema live there.
-- **Never call the network from a test.** Mock `fetch_flights`.
+- **Never call the network from a test.** Mock `fetch_flights`, `pyairbnb.search_all_from_url`, and
+  `pyairbnb.get_details`.
+- **Never call Airbnb outside `airbnb_api.py`.** The rest of the code works with plain dictionaries.
+- **Never use the detail-page price as the search price.** The search card total is the source of
+  truth; details are for amenities, room type, and capacity.
 - **Never merge untested math.** A headless test must pass before the change lands.
 - **Never store secrets.** Read `SERPAPI_KEY` from the environment; never print it.
 
