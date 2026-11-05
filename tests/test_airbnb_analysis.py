@@ -131,20 +131,24 @@ def test_filter_listings_reports_drop_count_per_criterion():
     }
 
 
-def test_filter_listings_can_exclude_non_stay_property_types():
+def test_filter_listings_can_exclude_rooms_and_non_stay_property_types():
     campsite = normalize_listing(
         raw_listing(room_id=20, title="Campsite in Schonach, Germany"),
         SEARCH,
     )
     apartment = normalize_listing(raw_listing(room_id=21), SEARCH)
+    private_room = normalize_listing(
+        raw_listing(room_id=22, title="Room in Fays, France"),
+        SEARCH,
+    )
 
     kept, drops = filter_listings(
-        [campsite, apartment],
-        {"exclude_property_types": ["Campsite"]},
+        [campsite, private_room, apartment],
+        {"exclude_property_types": ["Campsite", "Room"]},
     )
 
     assert [record["listing_id"] for record in kept] == ["21"]
-    assert drops == {"exclude_property_types": 1}
+    assert drops == {"exclude_property_types": 2}
 
 
 def test_apply_details_flattens_available_amenities():

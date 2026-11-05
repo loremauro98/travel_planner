@@ -69,3 +69,11 @@ filters, and writes a CSV + Markdown shortlist?
 - The sample still includes private rooms because the URL does not constrain room type. Add
   `exclude_property_types: ["Room", "Campsite"]` or a future `room_types` filter to focus on entire
   homes.
+
+### Room-type follow-up (2026-11-05)
+
+- Added `room_types[]=Entire home/apt` to the search URL and `Room` to `exclude_property_types`.
+- Rerun: 280 retrieved, 204 after local filters, 40-row shortlist.
+- All 40 rows are entire places; the enriched top five all report `room_type=Entire home/apt`.
+- Property-type mix: 31 apartments, 3 homes, plus one each of condo, townhouse, guest suite, tiny
+  home, camper/RV, and shepherd’s hut.

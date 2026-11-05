@@ -1,6 +1,6 @@
 {
   "label": "Alsace New Year",
-  "url": "https://www.airbnb.com/s/Alsace--France/homes?adults=2&checkin=2026-12-31&checkout=2027-01-02&place_id=ChIJv5Z326NGkUcR4CQ3mrlfCgE&refinement_paths%5B%5D=%2Fhomes&flexible_cancellation=true&price_max=150&price_filter_input_type=2&price_filter_num_nights=2",
+  "url": "https://www.airbnb.com/s/Alsace--France/homes?adults=2&checkin=2026-12-31&checkout=2027-01-02&place_id=ChIJv5Z326NGkUcR4CQ3mrlfCgE&refinement_paths%5B%5D=%2Fhomes&room_types%5B%5D=Entire%20home%2Fapt&flexible_cancellation=true&price_max=150&price_filter_input_type=2&price_filter_num_nights=2",
   "currency": "CHF",
   "language": "en",
   "max_results": 40,
@@ -17,6 +17,6 @@
     "min_beds": null,
     "min_baths": null,
     "exclude_hotels": true,
-    "exclude_property_types": ["Campsite", "Parking space"]
+    "exclude_property_types": ["Room", "Campsite", "Parking space"]
   }
 }

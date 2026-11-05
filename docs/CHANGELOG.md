@@ -45,12 +45,15 @@
 - **Skill:** Added `.agents/skills/airbnb-search/SKILL.md`, registered it in
   `docs/CUSTOM_SKILLS.md`, and routed it under `skills-route` Category 6.
 - **Docs:** Added `docs/airbnb_search.md` and the Airbnb routing row in `AGENTS.md`.
+- **Room type:** Added `room_types[]=Entire home/apt` to the search URL and `Room` to the local
+  property-type exclusions so the shortlist contains whole homes/flats, not single rooms.
 - **Dependencies:** Added `pyairbnb==2.2.2` and `curl_cffi==0.17.0` to `requirements.txt`.
 
 ### Verification
 - `pytest -q`: **37 passed**.
 - `ruff check src ops tests`: **clean**.
-- Live Alsace run: 280 retrieved, 205 after local filters, 40-row shortlist.
+- Live Alsace run: 280 retrieved, 204 after local filters, 40-row shortlist; all rows are entire
+  places (`Entire home/apt`), no private rooms.
 - Top results matched the visible BrowserOS page (names and CHF totals).
 - Outputs: `current_output/airbnb_alsace_new_year_2026-12-31_2027-01-02.csv` and `.md`.
 

@@ -31,6 +31,7 @@ https://www.airbnb.com/s/Alsace--France/homes
   &checkout=2027-01-02
   &place_id=ChIJv5Z326NGkUcR4CQ3mrlfCgE
   &refinement_paths%5B%5D=%2Fhomes
+  &room_types%5B%5D=Entire%20home%2Fapt
   &flexible_cancellation=true
   &price_max=150
   &price_filter_input_type=2
@@ -64,7 +65,7 @@ user’s intent.
 | `min_reviews` | Minimum review count. |
 | `min_bedrooms`, `min_beds`, `min_baths` | Layout constraints. |
 | `exclude_hotels` | Drop `FEATURED_HOTEL` / title containing “hotel”. |
-| `exclude_property_types` | Drop non-stay property types such as `Campsite` or `Parking space`. |
+| `exclude_property_types` | Drop non-stay property types such as `Room`, `Campsite`, or `Parking space`. The URL’s `room_types[]=Entire home/apt` is the primary filter; this is the local safety net. |
 
 Every active filter must report the exact number of listings it dropped (transparent-data-masker).
 

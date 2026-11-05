@@ -29,6 +29,7 @@ The cleaned search URL is the source of truth:
 - `price_max`, `price_filter_input_type`, `price_filter_num_nights`
 - `flexible_cancellation`
 - `refinement_paths[]=/homes`
+- `room_types[]=Entire home/apt` (whole house/flat only)
 
 Strip tracking and date-picker state (`acp_id`, `ref_fsid`, `ref_search_session_id`,
 `selected_filter_order`, `monthly_*`, `flexible_trip_lengths`, `date_picker_type`). In the Alsace
@@ -52,7 +53,7 @@ spike, the cleaned URL reproduced the visible page’s top listings; the full UR
     "min_rating": null,
     "min_reviews": null,
     "exclude_hotels": true,
-    "exclude_property_types": ["Campsite", "Parking space"]
+    "exclude_property_types": ["Room", "Campsite", "Parking space"]
   }
 }
 ```

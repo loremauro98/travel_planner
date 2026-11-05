@@ -29,8 +29,9 @@ Do **not** use this skill for booking, messaging hosts, payments, or exhaustive 
 ### Cleaning the URL
 
 Keep the real filters: `place_id`, `checkin`, `checkout`, `adults`, `price_max`,
-`flexible_cancellation`, `refinement_paths[]`, `price_filter_input_type`,
-`price_filter_num_nights`.
+`flexible_cancellation`, `refinement_paths[]`, `room_types[]`, `price_filter_input_type`,
+`price_filter_num_nights`. For whole homes/flats only, include
+`room_types[]=Entire home/apt`.
 
 Strip tracking and date-picker state: `acp_id`, `ref_fsid`, `ref_search_session_id`,
 `selected_filter_order`, `search_type`, `search_mode`, `channel`, `monthly_*`,
@@ -66,7 +67,8 @@ result set from the visible page; the cleaned URL reproduced the visible top lis
 - `min_rating`, `min_reviews`
 - `min_bedrooms`, `min_beds`, `min_baths`
 - `exclude_hotels`
-- `exclude_property_types` — e.g. `["Campsite", "Parking space"]`
+- `exclude_property_types` — e.g. `["Room", "Campsite", "Parking space"]`; the URL’s
+  `room_types[]=Entire home/apt` is the primary room-type filter, this is the local safety net.
 
 Every active filter reports the exact number of listings it dropped.
 
